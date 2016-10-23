@@ -1,5 +1,9 @@
+extensions:
+	monolog: Kdyby\Monolog\DI\MonologExtension
+
+
 application:
-	catchExceptions: on
+	catchExceptions: %productionMode%
 	errorPresenter: Front:Error
 	scanDirs: off
 	mapping:
@@ -12,3 +16,21 @@ services:
 
 	-
 		implement: App\FrontModule\Controls\Menu\IFactory
+
+	-
+		class: App\FrontModule\Mails\RsvpMail
+
+	-
+		class: App\Mails\MessageFactory
+		arguments:
+			- %wwwDir%
+			- %appDir%
+
+	-
+		implement: App\FrontModule\Controls\Rsvp\IFactory
+		arguments:
+			- @Kdyby\Monolog\Logger::channel('rsvp')
+
+
+monolog:
+	name: svatba
