@@ -1,0 +1,4 @@
+/config/config.local.neon
+/vendor
+/.vagrant
+
