@@ -9,3 +9,6 @@ application:
 services:
 	- App\Router\RouterFactory
 	router: @App\Router\RouterFactory::createRouter
+
+	-
+		implement: App\FrontModule\Controls\Menu\IFactory

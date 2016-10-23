@@ -14,7 +14,24 @@ class RouterFactory
 	public function createRouter() : Nette\Application\IRouter
 	{
 		$router = new Nette\Application\Routers\RouteList();
-		$router[] = new Nette\Application\Routers\Route('<presenter>/<action>[/<id>]', 'Front:Homepage:default');
+
+		$metadata = [
+			'module' => 'Front',
+			'presenter' => [
+				Nette\Application\Routers\Route::VALUE => 'Announcement',
+				Nette\Application\Routers\Route::FILTER_TABLE => [
+					'obrad' => 'Ceremony',
+					'oslava' => 'Party',
+					'ubytovani' => 'Accommodation',
+					'pocitame-s-vami' => 'Rsvp',
+					'program' => 'Programme',
+				],
+			],
+			'action' => 'default',
+			'id' => NULL,
+		];
+		$router[] = new Nette\Application\Routers\Route('<presenter>', $metadata);
+		$router[] = new Nette\Application\Routers\Route('rsvp', 'Front:Rsvp:default', [Nette\Application\Routers\Route::ONE_WAY]);
 
 		return $router;
 	}

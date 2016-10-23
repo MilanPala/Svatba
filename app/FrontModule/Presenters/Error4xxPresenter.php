@@ -5,7 +5,7 @@ namespace App\FrontModule\Presenters;
 use Nette;
 
 
-class Error4xxPresenter extends Nette\Application\UI\Presenter
+class Error4xxPresenter extends Presenter
 {
 
 	public function startup()
