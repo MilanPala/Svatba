@@ -25,6 +25,9 @@ services:
 		arguments:
 			- %wwwDir%
 			- %appDir%
+			- %fromEmail%
+			- %fromName%
+			- %toEmail%
 
 	-
 		implement: App\FrontModule\Controls\Rsvp\IFactory

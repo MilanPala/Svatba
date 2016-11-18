@@ -20,15 +20,36 @@ class MessageFactory
 	 */
 	private $appDir;
 
+	/**
+	 * @var string
+	 */
+	private $fromEmail;
+
+	/**
+	 * @var string
+	 */
+	private $fromName;
+
+	/**
+	 * @var string
+	 */
+	private $toEmail;
+
 
 	public function __construct(
 		string $wwwDir,
 		string $appDir,
+		string $fromEmail,
+		string $fromName,
+		string $toEmail,
 		\Nette\Bridges\ApplicationLatte\ILatteFactory $latteFactory
 	) {
 		$this->wwwDir = $wwwDir;
 		$this->appDir = $appDir;
 		$this->latteFactory = $latteFactory;
+		$this->fromEmail = $fromEmail;
+		$this->fromName = $fromName;
+		$this->toEmail = $toEmail;
 	}
 
 
@@ -54,6 +75,9 @@ class MessageFactory
 
 		$templateParameters['subject'] = $subject;
 		$message->setSubject($subject);
+
+		$message->setFrom($this->fromEmail, $this->fromName);
+		$message->addTo($this->toEmail);
 
 		$message->setBody(
 			$latte->renderToString($templatePath, $templateParameters),
