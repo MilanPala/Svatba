@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "6cf592f9fcf6c9cb7e04c2559e06ea5f",
-    "content-hash": "3f565070444b06dc7a543d5c94c3e7a7",
+    "hash": "58e81b6c543fdc43ce5fcdde69a61a5e",
+    "content-hash": "6cbbbade0787a18dc6dea9f4453ddf75",
     "packages": [
         {
             "name": "kdyby/monolog",
@@ -502,16 +502,16 @@
         },
         {
             "name": "nette/di",
-            "version": "v2.4.3",
+            "version": "v2.4.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nette/di.git",
-                "reference": "aa40af0766b990fbe052d6efe89382d6df2ae641"
+                "reference": "54dbce99e3355e201607874bdbcde8a0b8a1e98e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nette/di/zipball/aa40af0766b990fbe052d6efe89382d6df2ae641",
-                "reference": "aa40af0766b990fbe052d6efe89382d6df2ae641",
+                "url": "https://api.github.com/repos/nette/di/zipball/54dbce99e3355e201607874bdbcde8a0b8a1e98e",
+                "reference": "54dbce99e3355e201607874bdbcde8a0b8a1e98e",
                 "shasum": ""
             },
             "require": {
@@ -558,7 +558,7 @@
             ],
             "description": "Nette Dependency Injection Component",
             "homepage": "https://nette.org",
-            "time": "2016-09-21 16:51:11"
+            "time": "2016-10-26 16:05:47"
         },
         {
             "name": "nette/finder",
@@ -1208,7 +1208,11 @@
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
-        "php": "~7.0.0"
+        "php": "~7.0.0",
+        "ext-zip": "*",
+        "ext-xml": "*",
+        "ext-curl": "*",
+        "ext-mysqli": "*"
     },
     "platform-dev": []
 }
