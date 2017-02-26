@@ -5,6 +5,14 @@ namespace App\FrontModule\Controls\Rsvp;
 class Control extends \Nette\Application\UI\Control
 {
 
+	const ARRIVE_SATURDAY = 'saturday';
+	const ARRIVE_FRIDAY = 'friday';
+
+	const ARRIVES = [
+		self::ARRIVE_FRIDAY => 'v pátek',
+		self::ARRIVE_SATURDAY => 'v sobotu',
+	];
+
 	/**
 	 * @var \Monolog\Logger
 	 */
@@ -47,6 +55,8 @@ class Control extends \Nette\Application\UI\Control
 		$form
 			->addCheckbox('children', 'Přijdu s dětmi');
 		$form
+			->addRadioList('arrive', 'Přijedu', self::ARRIVES);
+		$form
 			->addTextArea('message', 'Chtěli byste nám ještě něco vzkázat?');
 		$form
 			->addSubmit('send', 'Poslat svatební poštou');
@@ -61,8 +71,8 @@ class Control extends \Nette\Application\UI\Control
 
 	private function processForm(\Nette\Application\UI\Form $form, array $data)
 	{
-		$this->rsvpLogger->addInfo('Byla zaregistrována nová odpověď', ['data' => $data]);
-		$this->rsvpMail->send($data['name'], $data['partner'], $data['children'], $data['message']);
+		$this->rsvpLogger->addInfo('Byla přidána nová odpověď', ['data' => $data]);
+		$this->rsvpMail->send($data['name'], $data['partner'], $data['children'], $data['arrive'], $data['message']);
 
 		$this->getPresenter()->flashMessage('Moc děkujeme za potvrzení. Těšíme se na viděnou.');
 		$this->redirect('this');

@@ -2,6 +2,8 @@
 	<p><label n:name="name">{$form['name']->getLabel()->getText()}</label><input n:name="name"></p>
 	<p><label n:name="partner"><input n:name="partner">{$form['partner']->getLabelPart()->getText()}</label></p>
 	<p><label n:name="children"><input n:name="children">{$form['children']->getLabelPart()->getText()}</label></p>
+	<p>Přijedu</p>
+	<p n:foreach="$form['arrive']->getItems() as $key => $label"><label n:name="arrive:$key"><input n:name="arrive:$key">{$label}</label></p>
 	<p><label n:name="message">{$form['message']->getLabel()->getText()}</label><br><textarea n:name="message"></textarea></p>
 	<p><input n:name="send"></p>
 </form>
