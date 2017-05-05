@@ -1,0 +1,23 @@
+/* MESSAGES */
+
+.message {
+	padding:10px; background:#fff; color:@color-default; text-align:left; position:relative; font-weight:bold; border-radius:3px;
+
+	&.error-message {
+		color:#fff; background:@color-msg-error;
+	}
+	&.ok-message {
+		background:@color-msg-ok; color:#fff;
+
+	}
+	&.info-message {
+		background:@color-msg-info;
+	}
+
+	@media @w960 {
+		padding:13px 15px;
+	}
+}
+
+
+

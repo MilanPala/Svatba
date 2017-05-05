@@ -1,0 +1,30 @@
+form, fieldset{ margin:0; padding:0; border:none; }
+
+button, input, select, textarea { font-size:100%; margin:0; vertical-align:baseline; -webkit-font-smoothing:antialiased; border-radius:0; }
+input[type="submit"]:focus{ outline:none; }
+input[type="search"] { -webkit-appearance:none; }
+input::-webkit-outer-spin-button, input::-webkit-inner-spin-button{ -webkit-appearance:none; margin:0; }
+
+textarea { resize:vertical; vertical-align:top; }
+input[type="number"] { -moz-appearance:textfield; }
+select.inp-text, select.inp-text option {
+	-webkit-appearance:none;
+	-moz-appearance:none;
+	-ms-appearance:none;
+	-o-appearance:none;
+	appearance:none;
+
+	text-overflow:ellipsis;
+
+	&::-ms-expand {
+		display:none;
+	}
+	&:-moz-focusring {
+		color:transparent; text-shadow:0 0 0 @color-default;
+	}
+}
+
+input::-webkit-input-placeholder, textarea::-webkit-input-placeholder { .placeholder; }
+input::-moz-placeholder,          textarea::-moz-placeholder          { .placeholder; }
+input:-moz-placeholder,           textarea:-moz-placeholder           { .placeholder; }
+input:-ms-input-placeholder,      textarea:-ms-input-placeholder      { .placeholder; }

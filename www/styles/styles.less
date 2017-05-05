@@ -1,0 +1,53 @@
+@charset "UTF-8";
+
+@font-sans: 'Helvetica Neue', Arial, Helvetica, sans-serif;
+@font-roboto: 'Roboto', @font-sans;
+@font-default: @font-roboto;
+@font-base-size:14; // základní velikost písma
+@font-base-size-mobile:14; // základní velikost písma na mobilu (<768)
+
+@margin-default: 0 0 1.4em 0;
+@lh-default: 1.8;
+
+// MEDIA QUERIES
+@w480:~'(min-width: 480px)';
+@w590:~'(min-width: 590px)';
+@w768:~'(min-width: 768px)';
+@w960:~'(min-width: 960px)';
+@w1040:~'(min-width: 1040px)';
+
+@w480-max:~'(max-width: 479px)';
+@w590-max:~'(max-width: 589px)';
+@w768-max:~'(max-width: 767px)';
+@w960-max:~'(max-width: 959px)';
+@w1040-max:~'(max-width: 1039px)';
+
+// COLORS
+@color-default: @color-dark;
+@color-link:@color-brown;
+@color-link-hover: @color-orange;
+
+@color-dark: #000;
+@color-gray: #808080;
+@color-gray-lt: #e6e6e6;
+@color-brown: #ab5b1a;
+@color-orange: #e44e25;
+
+@color-red:#e13728;
+@color-green:#158923;
+@color-yellow:#fffa82;
+
+@color-border: @color-gray;
+@color-bg: @color-gray-lt;
+@color-msg-error:@color-red;
+@color-msg-ok:@color-green;
+@color-msg-info:@color-yellow;
+
+@all24: url("../img/all24.png?v=1");
+
+// IMPORT
+@import (inline) "normalize.css";
+
+@import "core/core";
+@import "layout/layout";
+@import "form/form";

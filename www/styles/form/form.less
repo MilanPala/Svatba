@@ -1,0 +1,39 @@
+@import "normalize";
+@import "buttons";
+@import "inputs";
+@import "messages";
+
+/* FORM */
+.form
+{
+	margin:10px 0;
+
+	@media @w768{
+		margin:20px 0;
+	}
+}
+
+form p{margin-bottom:0.7em;}
+form p.reset { margin-bottom:0; }
+
+label, .label {
+	font-weight:normal; cursor:pointer;
+}
+
+/* INPUT ERRORS / NOTES / HELP */
+.error label { color:@color-msg-error; }
+
+/* MISC */
+.req { .font-size(14); }
+.req:last-child { margin-bottom:0; }
+
+
+/* AJAX */
+.ajax-wrap, .ajax-spinner { position:relative; }
+.ajax-overlay {
+	position:absolute; top:0; left:0; right:0; bottom:0; background:#fff; z-index:50; .opacity(.6);
+}
+.ajax-loader {
+	&:extend(.spinner all);
+	position:absolute; top:50%; left:50%; width:32px; height:32px; margin:-16px 0 0 -16px; z-index:51; border-radius:50%;
+}

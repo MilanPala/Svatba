@@ -1,0 +1,29 @@
+.calendar{
+	margin:0 auto 1.4em; overflow:hidden; max-width:320px;
+
+	ul{
+		margin-top:-25px;
+	}
+
+	li{
+		margin-top:25px; text-align:center;
+	}
+
+	.spc{
+		text-decoration:none; color:@color-default; display:block;
+
+		&:hover{
+			.title{
+				color:@color-link-hover;
+			}
+		}
+	}
+
+	.date{
+		color:@color-gray; margin-bottom:0;
+	}
+
+	.title{
+		margin:0; color:@color-brown; .transition(color 0.3s ease);
+	}
+}

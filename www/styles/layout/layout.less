@@ -1,0 +1,65 @@
+// IMPORT
+@import "header";
+@import "menu/main-menu";
+
+@import "box/main-img";
+@import "box/att-box";
+@import "box/calendar";
+
+@import "footer";
+
+
+/* NAVIGATION SKIP */
+#nav-skip {
+	height:0; margin:0;
+	a { position:absolute; left:-2000px; top:auto; }
+	a:focus, #nav-skip a:active { position:absolute; left:0; width:250px; background:#fff; padding:0 0 5px; z-index:99; }
+}
+
+/* LAYOUT */
+#outer-wrap {
+	position:relative;
+}
+
+#main{
+	position:relative; z-index:1; min-height:400px; padding-bottom:20px;
+}
+
+.max-660{
+	max-width:660px; margin-left:auto; margin-right:auto;
+}
+
+@padding:10px;
+
+.in-box{
+	padding:0 @padding; max-width:1000px; margin:0 auto; text-align:left; .box-sizing();
+
+	&.no-padding{
+		padding-left:0; padding-right:0;
+	}
+}
+@media @w768{
+	@padding:20px;
+
+	.in-box{
+		padding-left:@padding; padding-right:@padding;
+	}
+}
+
+@media @w960{
+	@padding:15px;
+
+	.in-box{
+		padding-left:@padding; padding-right:@padding;
+	}
+}
+
+
+
+
+
+
+
+
+
+

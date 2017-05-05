@@ -1,0 +1,38 @@
+#header {
+	height:60px; .box-sizing(); background:#fff; box-shadow:0 2px 3px rgba(0,0,0,0.3); position:relative; z-index:2;
+
+	#logo {
+		margin:0; position:absolute; left:10px; top:10px; padding:0; font-size:16px; font-weight:bold; line-height:1.4;
+
+		a{
+			text-decoration:none; .anchor-color(@color-brown; @color-brown);
+		}
+	}
+
+	.claim{
+		font-size:13px; display:block; font-weight:normal;
+	}
+
+	@media @w768 {
+		.in-box{
+			position:relative;
+		}
+
+		height:82px; border-bottom:none;
+
+		#logo {
+			top:10px; font-size:24px;
+		}
+
+		.claim{
+			font-size:16px;
+		}
+	}
+
+	@media @w1040{
+		#logo {
+			left:15px;
+		}
+	}
+}
+

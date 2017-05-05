@@ -1,0 +1,71 @@
+.att-images{
+	.grid-list(2);
+
+	margin:0 -5px 1.4em;
+
+	ul{
+		margin-top:-10px; text-align:center; margin-left:-0.5%; margin-right:-0.5%;
+	}
+
+	li{
+		.box-sizing(); margin-top:10px; padding:0 5px; text-align:left;
+	}
+
+	.img{
+		display:inline-block; width:100%; vertical-align:top; position:relative;
+
+		&:before{
+			position:absolute; top:0; left:0; right:0; bottom:0; background:rgba(230,230,230,0.3); content:""; opacity:0; .transition(opacity 0.3s ease);
+		}
+	}
+
+	li a:hover{
+		.img{
+			&:before{
+				opacity:1;
+			}
+		}
+	}
+
+	img{
+		.responsive-img(); width:100%;
+	}
+
+	a{
+		display:block; text-decoration:none; color:@color-default;
+	}
+
+	.name{
+		background:#fff; min-height:37px; padding:6px 15px; display:block; font-size:12px; line-height:25px; .box-sizing();
+
+		span{
+			display:inline-block; vertical-align:middle; line-height:normal; margin-top:-4px;
+		}
+	}
+
+	@media @w768{
+		.grid-list-set-items(3);
+	}
+
+	@media @w960{
+		.name{
+			.font-size(16);
+		}
+
+		margin:0 -13px 1.4em;
+
+		ul{
+			margin-top:-26px;
+		}
+
+		li{
+			margin-top:26px; padding:0 13px;
+		}
+	}
+}
+
+.att-files{
+	.size{
+		color:@color-gray; white-space:nowrap;
+	}
+}
