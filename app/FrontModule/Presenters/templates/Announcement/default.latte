@@ -1,8 +1,26 @@
 <html>
 	<head>
 		<title>Svatba Terezy a Milana</title>
+		<style>
+			html,body,#container {
+				height:100%;
+			}
+			#container {
+				width:100%;
+				position:relative;
+			}
+			#container > img {
+				width:100%;
+				max-width:400px; /* real image width */
+				position:absolute;
+				top:0; left:0; right:0; bottom:0;
+				margin:auto;
+			}
+		</style>
 	</head>
 	<body>
-		<img src="images/oznameni.png" style="height: 100%; width: 100%; object-fit: contain;">
+		<div id="container">
+			<img src="images/oznameni.png">
+		</div>
 	</body>
 </html>
