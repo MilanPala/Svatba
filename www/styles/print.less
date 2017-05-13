@@ -35,8 +35,6 @@
 @color-msg-ok:@color-green;
 @color-msg-info:@color-yellow;
 
-@all24: url("../img/all24.png");
-
 // IMPORT
 @import "core/mixins";
 
@@ -46,15 +44,14 @@
 }
 
 /* STYLES */
-#nav-skip, #main-menu, .footer-brown,
-.hidden, .no-print, .main-img .prev, .main-img .next, .main-img .pager,
-.author
+#nav-skip, #main-menu, #footer,
+.hidden, .no-print
 { display:none !important; }
 
-body { width:100%; margin:0; padding:0; background:none; color:#000; font: 11pt/1.3 Georgia, "Times New Roman", Times, serif; }
+body { width:100%; text-align:left; margin:0; padding:0; background:none; color:#000; font: 11pt/1.3 Georgia, "Times New Roman", Times, serif; }
 
 h1, h2, h3, h4, h5, h6,
-.h1, .h2, .h3, .h4, .h5, .h6 { font-family:Georgia, 'Times New Roman', serif; font-weight:bold; text-align:left; }
+.h1, .h2, .h3, .h4, .h5, .h6 { font-family:Georgia, 'Times New Roman', serif; font-weight:bold;}
 h1, .h1 { font:bold normal 18pt/1.3 Georgia, 'Times New Roman', serif; margin:.67em 0; }
 h2, .h2 { font-size: 16pt; margin-top: 25px; }
 h3, .h3 { font-size:13pt; }
