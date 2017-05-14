@@ -1,8 +1,9 @@
-<ul>
-	<li><a href="{plink Announcement:}">Oznámení</a></li>
-	<li><a href="{plink Ceremony:}">Obřad</a></li>
-	<li><a href="{plink Party:}">Oslava</a></li>
-	<li><a href="{plink Accommodation:}">Ubytování</a></li>
-	<li><a href="{plink Rsvp:}">Počítáme s vámi</a></li>
-	<li><a href="{plink Programme:}">Program</a></li>
-</ul>
+{default $menu = []}
+
+<div class="menu">
+	<ul class="reset">
+		<li n:foreach="$menu as $node" n:class="$node->isSelected() ? selected">
+			<a href="{plink ':'.$node->getPresenterName().':'}"><span class="inner">{$node->getLabel()}</span></a>
+		</li>
+	</ul>
+</div>

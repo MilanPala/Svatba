@@ -1,16 +1,105 @@
 <!DOCTYPE html>
-<html>
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width">
-	<title>{ifset #title}{include #title} &ndash; {/ifset}Svatba Terezy a Milana</title>
-</head>
+<html class="no-js disable-transition" lang="cs">
+	<head>
+		<meta charset="utf-8">
+		<meta name="Author" content="www.internetove-stranky.eu">
+		<meta name="Keywords" content="">
+		<meta name="Description" content="">
 
-<body>
-	{control menu}
+		<meta name="HandheldFriendly" content="True">
+		<meta name="MobileOptimized" content="320">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+		<meta name="format-detection" content="telephone=no">
 
-	<div n:foreach="$flashes as $flash" n:class="flash, $flash->type">{$flash->message}</div>
+		<title>{ifset #title}{include #title} &ndash; {/ifset}Svatba Terezy &amp; Milana</title>
 
-	{include #content}
-</body>
+		<link href="https://fonts.googleapis.com/css?family=Roboto:300,700&amp;subset=latin-ext" rel="stylesheet">
+		<script type="text/javascript">document.documentElement.className = document.documentElement.className.replace('no-js','js');</script>
+
+		<link rel="stylesheet" type="text/css" href="{$basePath}/styles/styles.css" media="screen">
+		<link rel="stylesheet" type="text/css" href="{$basePath}/styles/print.css" media="print">
+
+		<!--[if (lt IE 9)]>
+		<script src="{$basePath}/js/respond.min.js"></script>
+		<![endif]-->
+
+		<link rel="shortcut icon" type="image/x-icon" href="{$basePath}/favicon.ico"> <!-- Chrome, FF -->
+	</head>
+	<body>
+		<div id="outer-wrap">
+			<div id="header">
+				<p id="nav-skip">
+					<a href="#main" accesskey="2" title="Přejít k obsahu (Klávesová zkratka: Alt + 2)">Přejít k obsahu</a>
+					<span class="hidden">|</span>
+					<a href="#main-menu">Přejít k hlavnímu menu</a>
+				</p>
+				<div class="in-box">
+					<p id="logo">
+						<a href="{plink Announcement:}">
+							<img src="{$basePath}/img/logo.png" alt="Tereza &amp; Milan">
+						</a>
+					</p>
+				</div>
+			</div>
+
+			<div id="main">
+				<div class="bg-white in-box">
+					<h1 class="center" n:ifset="#title">{include #title}</h1>
+
+					<div n:foreach="$flashes as $flash" n:class="flash, $flash->type">{$flash->message}</div>
+
+					{include #content}
+
+				</div>
+			</div>
+
+			<div id="main-menu">
+				<h2 class="ca-control">
+					<a href="#main-menu">
+						<div class="ham">
+							<span></span>
+							<span></span>
+							<span></span>
+						</div>
+						<span class="out">Menu</span>
+					</a>
+				</h2>
+				<div class="ca-box">
+					{control menu}
+				</div>
+			</div>
+
+			<div id="footer">
+				<div class="point-map">
+					<p class="img">
+						<img src="/img/point-map.jpg" alt="">
+					</p>
+					<ul class="reset points">
+						<li>
+							<a href="#" title="bouda1" class="point point1 active"></a>
+						</li>
+						<li>
+							<a href="#" title="bouda1" class="point point2"></a>
+						</li>
+						<li>
+							<a href="#" title="bouda1" class="point point3"></a>
+						</li>
+						<li>
+							<a href="#" title="bouda1" class="point point4"></a>
+						</li>
+						<li>
+							<a href="#" title="bouda1" class="point point5"></a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<script src="{$basePath}/js/jquery.js"></script>
+		<script src="{$basePath}/js/jquery.collapsable.js"></script>
+		<script src="{$basePath}/js/jquery.carouFredSel.js"></script>
+		<script src="{$basePath}/js/jquery.lightbox.responsive.js"></script>
+		<script src="{$basePath}/js/main.js"></script>
+
+	</body>
 </html>
