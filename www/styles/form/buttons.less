@@ -1,14 +1,35 @@
 .btn {
-	position:relative; display:inline-block; max-width:100%; height:40px; padding:0 10px; border-radius:3px; .box-sizing(); background:@color-brown; border:none; font:normal bold 18px/40px @font-default; text-align:center; text-transform:uppercase; color:#fff; vertical-align:top; text-decoration:none;
+	position:relative; display:inline-block; max-width:100%; height:75px; padding:0 10px; border-radius:0; .box-sizing(); background:#ffd4d4; border:none; font:normal 300 28px/75px @font-default; text-align:center; color:#7b3f49; font-family:@font-rosalinda; vertical-align:top; text-decoration:none;
+	box-shadow:0 2px 4px rgba(0,0,0,0.11); margin-bottom:48px;
+
 	.transition(~'background-color 300ms ease');
 
-	&:hover, &:focus, &:active { outline:none; background-color:@color-dark; text-decoration:none; }
+	&:hover, &:focus, &:active { outline:none; background-color:@color-red; text-decoration:none; }
+
+	&:after{
+		position:absolute; top:10px; left:10px; right:10px; bottom:10px; border:1px solid #7b3f49; content:"";
+	}
+
+	&:before{
+		position:absolute; content:""; bottom:-48px; background:url("/img/btn-illust.png") 0 0 no-repeat; width:224px; height:48px; left:50%; margin-left:-112px;
+	}
 
 	br { display:none; }
-	span { display:inline-block; max-width:100%; vertical-align:top; line-height:40px; }
+	span {
+		display:inline-block; max-width:100%; vertical-align:top; line-height:78px; padding:0 14px; position:relative;
+
+		&:before,
+		&:after{
+			content:""; width:5px; height:5px; position:absolute; left:0; top:50%; display:block; margin-top:-3px; background:#7b3f49; border-radius:50%;
+		}
+
+		&:after{
+			left:auto; right:0;
+		}
+  	}
 
 	@media @w480{
-		padding:0 25px;
+		padding:0 60px;
 	}
 }
 

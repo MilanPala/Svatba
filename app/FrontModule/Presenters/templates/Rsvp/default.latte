@@ -1,3 +1,46 @@
 {block content}
 
-{control rsvp}
+
+<h1 class="center">Počítáme s vám</h1>
+
+
+<div class="wysiwyg w-max-500 rsvp-page">
+	<p class="message error-message">Error</p>
+	<p class="message ok-message">Ok</p>
+	<p class="message info-message">Info</p>
+
+	<form action="#form" method="post" class="form">
+		<p>
+			<label for="name" >Tvé jméno</label> *
+			<br/>
+			<input name="name" id="name" type="text" class="inp-text" value="" />
+		</p>
+		<p class="col-h-l">
+			<input type="checkbox" id="partner" name="partner" checked="checked">
+			<label for="partner">
+				Přijdu s partnerem
+			</label>
+		</p>
+		<p class="col-h-r">
+			<input type="checkbox" id="child" name="child">
+			<label for="child">
+				Přijdu s dětmi
+			</label>
+		</p>
+		<div class="break"></div>
+		<p>
+			<label class="js-hide" for="text" >Poznámka:</label>
+			<textarea cols="50" rows="6" class="inp-text" placeholder="Chtěli byste nám ještě něco vzkázat? Třeba na jakou oblíbenou píseň byste si chtěli na svatbě zatančit?" name="text" id="text"></textarea>
+		</p>
+
+		<p class="center">
+	        <button type="submit" class="btn"><span>Potvrzuji</span></button>
+	    </p>
+
+	</form>
+</div>
+<p class="illust-rsvp">
+	<img src="img/illust-rsvp.jpg" alt="">
+</p>
+
+{*{control rsvp}*}

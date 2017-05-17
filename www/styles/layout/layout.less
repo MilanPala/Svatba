@@ -26,15 +26,18 @@
 }
 
 .bg-white{
-	background:#fff url("/img/bg-top-white-box.jpg") 50% -20px no-repeat; padding-top:70px; padding-bottom:10px; box-shadow:0 4px 9px rgba(95,76,54,0.41);
+	background:#fff url("/img/bg-top-white-box.jpg") 50% -20px no-repeat; padding-top:70px; padding-bottom:10px; box-shadow:0 4px 9px rgba(95,76,54,0.41); position:relative;
 
 	@media @w768{
-		padding-top:144px; padding-bottom:60px;  background-position:50% 45px;
+		padding-top:144px; padding-bottom:60px;  background-position:50% 45px; min-height:800px;
 	}
 }
 
-.w-max-840{
-	max-width:840px; margin-left:auto; margin-right:auto;
+.annot{
+	.font-size(16; @font-base-size-mobile);
+	@media @w768{
+		.font-size(18);
+	}
 }
 
 @padding:10px;

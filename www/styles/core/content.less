@@ -24,8 +24,8 @@ h1, .h1 {
 	@media @w960 { .font-size(58);}
 }
 h2, .h2 {
-	.font-size(19; @font-base-size-mobile);
-	@media @w768 { .font-size(25);}
+	.font-size(19; @font-base-size-mobile); font-weight:normal;
+	@media @w768 { .font-size(28); margin-top:2em}
 }
 h3, .h3 {
 	.font-size(17; @font-base-size-mobile);
@@ -38,7 +38,7 @@ h4, .h4, h5, h6 {
 
 /* FONTS */
 .bold { font-weight:bold; }
-.thin { font-weight:normal; }
+.thin { font-weight:300; }
 
 .small { .font-size(14; @font-base-size-mobile);
 	@media @w768{
@@ -47,7 +47,7 @@ h4, .h4, h5, h6 {
 }
 .big { .font-size(16; @font-base-size-mobile);
 	@media @w768{
-		.font-size(19);
+		.font-size(18);
 	}
 }
 
@@ -83,7 +83,7 @@ h4, .h4, h5, h6 {
 	&:before { display:none; position:static; top:auto; width:auto; height:auto; margin:0; border-radius:0; background:none; }
 }
 table.reset { border-spacing:0; }
-table.reset, table.reset td, table.reset th, table.reset thead th { width:auto; .reset; font-weight:normal; color:inherit; }
+table.reset, table.reset td, table.reset th, table.reset thead th { width:auto; .reset; font-weight:300; color:inherit; }
 table.reset tr:nth-child(even) th, table.reset tr:nth-child(even) td { background:none; }
 
 /* MISC */
@@ -227,14 +227,15 @@ th{
 	.wysiwyg img.left{ float:left; margin:0 20px 15px 0; clear:both; max-width:50%; }
 	.wysiwyg img.right{ float:right; margin:0 0 15px 20px; clear:both; max-width:50%;}
 
-	.mobile-only{
-		display:none;
-	}
 }
 
 @media @w768-max {
 	.col-h-l, .col-h-r {
 		&.m-full { float:none; width:auto; }
+	}
+
+	.desktop-only{
+		display:none;
 	}
 }
 
@@ -249,6 +250,10 @@ th{
 	}
 
 	th, td{padding:.5em 10px;}
+
+	.mobile-only{
+		display:none;
+	}
 }
 
 @media @w960{
