@@ -46,7 +46,7 @@
 				<div class="bg-white in-box">
 					<h1 class="center" n:ifset="#title">{include #title}</h1>
 
-					<div n:foreach="$flashes as $flash" n:class="flash, $flash->type">{$flash->message}</div>
+					<div n:foreach="$flashes as $flash" n:class="message, $flash->type.'-message'">{$flash->message}</div>
 
 					{include #content}
 
@@ -72,26 +72,26 @@
 			<div id="footer">
 				<div class="point-map">
 					<p class="img">
-						<img src="/img/point-map.jpg" alt="">
+						<img src="{$basePath}/img/point-map.jpg" alt="">
 					</p>
 					<ul class="reset points">
 						<li>
-							<a href="#" title="Obřad" class="point point1 active"></a>
+							<a href="{plink Ceremony:}" title="Obřad" n:class="point, point1, $control instanceof App\FrontModule\Presenters\CeremonyPresenter ? active"></a>
 						</li>
 						<li>
-							<a href="#" title="Ubytování" class="point point2"></a>
+							<a href="{plink Accommodation:}" title="Ubytování" n:class="point, point2, $control instanceof App\FrontModule\Presenters\AccommodationPresenter ? active"></a>
 						</li>
 						<li>
-							<a href="#" title="Ubytování" class="point point3"></a>
+							<a href="{plink Accommodation:}" title="Ubytování" n:class="point, point3, $control instanceof App\FrontModule\Presenters\AccommodationPresenter ? active"></a>
 						</li>
 						<li>
-							<a href="#" title="Ubytování" class="point point4"></a>
+							<a href="{plink Accommodation:}" title="Ubytování" n:class="point, point4, $control instanceof App\FrontModule\Presenters\AccommodationPresenter ? active"></a>
 						</li>
 						<li>
-							<a href="#" title="Ubytování" class="point point5"></a>
+							<a href="{plink Party:}" title="Oslava" n:class="point, point5, $control instanceof App\FrontModule\Presenters\PartyPresenter ? active"></a>
 						</li>
 						<li>
-							<a href="#" title="Oslava" class="point point6"></a>
+							<a href="{plink Accommodation:}" title="Ubytování" n:class="point, point6, $control instanceof App\FrontModule\Presenters\AccommodationPresenter ? active"></a>
 						</li>
 					</ul>
 				</div>

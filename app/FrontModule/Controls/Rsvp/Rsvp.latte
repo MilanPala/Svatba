@@ -1,9 +1,42 @@
-<form n:name="form">
-	<p><label n:name="name">{$form['name']->getLabel()->getText()}</label><input n:name="name"></p>
-	<p><label n:name="partner"><input n:name="partner">{$form['partner']->getLabelPart()->getText()}</label></p>
-	<p><label n:name="children"><input n:name="children">{$form['children']->getLabelPart()->getText()}</label></p>
-	<p>Přijedu</p>
-	<p n:foreach="$form['arrive']->getItems() as $key => $label"><label n:name="arrive:$key"><input n:name="arrive:$key">{$label}</label></p>
-	<p><label n:name="message">{$form['message']->getLabel()->getText()}</label><br><textarea n:name="message"></textarea></p>
-	<p><input n:name="send"></p>
+<form n:name="form" class="form">
+	<p>
+		<label n:name="name">{$form['name']->getLabel()->getText()}</label>
+		<br/>
+		<input n:name="name" class="inp-text" />
+	</p>
+	<p class="col-h-l">
+		<input n:name="partner">
+		<label n:name="partner">
+			{$form['partner']->getLabelPart()->getText()}
+		</label>
+	</p>
+	<p class="col-h-r">
+		<input n:name="children">
+		<label n:name="children">
+			{$form['children']->getLabelPart()->getText()}
+		</label>
+	</p>
+	<div class="break"></div>
+	<p class="col-h-l">
+		<input n:name="arriveFriday" class="js-arrive">
+		<label n:name="arriveFriday">
+			{$form['arriveFriday']->getLabelPart()->getText()}
+		</label>
+	</p>
+	<p class="col-h-r">
+		<input n:name="arriveSaturday" class="js-arrive">
+		<label n:name="arriveSaturday">
+			{$form['arriveSaturday']->getLabelPart()->getText()}
+		</label>
+	</p>
+	<div class="break"></div>
+	<p>
+		<label class="js-hide" n:name="message">{$form['message']->getLabel()->getText()}</label>
+		<textarea cols="50" rows="6" class="inp-text" n:name="message" placeholder="Chtěli byste nám ještě něco vzkázat? Třeba na jakou oblíbenou píseň byste si chtěli na svatbě zatančit?" name="text" id="text"></textarea>
+	</p>
+
+	<p class="center">
+		<button type="submit" class="btn" n:name="send"><span>Poslat svatební poštou</span></button>
+	</p>
+
 </form>
