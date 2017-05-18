@@ -2350,19 +2350,40 @@ th {
   margin-top: -6vw;
 }
 .point-map .point3 {
-  left: 64.5%;
-  top: 65%;
-  background: #534037;
+  left: 60%;
+  top: 86%;
+  background: #fbd561;
+  width: 10vw;
+  height: 10vw;
+  margin-left: -5vw;
+  margin-top: -5vw;
 }
 .point-map .point4 {
   left: 43%;
-  top: 85%;
-  background: #fd988c;
+  top: 87%;
+  background: #fbd561;
+  width: 8vw;
+  height: 8vw;
+  margin-left: -4vw;
+  margin-top: -4vw;
 }
 .point-map .point5 {
-  left: 75%;
-  top: 71%;
-  background: #c7dd4c;
+  left: 64%;
+  top: 64%;
+  background: #fd988c;
+  width: 12vw;
+  height: 12vw;
+  margin-left: -6vw;
+  margin-top: -6vw;
+}
+.point-map .point6 {
+  left: 36.5%;
+  top: 87%;
+  background: #fbd561;
+  width: 8vw;
+  height: 8vw;
+  margin-left: -4vw;
+  margin-top: -4vw;
 }
 /* NAVIGATION SKIP */
 #nav-skip {
