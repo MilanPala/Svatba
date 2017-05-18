@@ -1,26 +1,51 @@
-<html>
+<!DOCTYPE html>
+<html class="no-js disable-transition" lang="cs">
 	<head>
-		<title>Svatba Terezy a Milana</title>
-		<style>
-			html,body,#container {
-				height:100%;
-			}
-			#container {
-				width:100%;
-				position:relative;
-			}
-			#container > img {
-				width:100%;
-				max-width:400px; /* real image width */
-				position:absolute;
-				top:0; left:0; right:0; bottom:0;
-				margin:auto;
-			}
-		</style>
+		<meta charset="utf-8">
+		<meta name="Author" content="www.internetove-stranky.eu">
+		<meta name="Keywords" content="">
+		<meta name="Description" content="">
+
+		<meta name="HandheldFriendly" content="True">
+		<meta name="MobileOptimized" content="320">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+		<meta name="format-detection" content="telephone=no">
+
+		<title>{ifset #title}{include #title} &ndash; {/ifset}Svatba Terezy &amp; Milana</title>
+
+		<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700&amp;subset=latin-ext" rel="stylesheet">
+		<script type="text/javascript">document.documentElement.className = document.documentElement.className.replace('no-js','js');</script>
+
+		<link rel="stylesheet" type="text/css" href="{$basePath}/styles/styles.css" media="screen">
+		<link rel="stylesheet" type="text/css" href="{$basePath}/styles/print.css" media="print">
+
+		<!--[if (lt IE 9)]>
+		<script src="{$basePath}/js/respond.min.js"></script>
+		<![endif]-->
+
+		<link rel="shortcut icon" type="image/x-icon" href="{$basePath}/favicon.ico"> <!-- Chrome, FF -->
 	</head>
-	<body>
-		<div id="container">
-			<img src="{$basePath}/img/oznameni.png" style="height: 100%; width: 100%; object-fit: contain;">
+	<body class="hp">
+		<div class="in-box">
+			<div class="wysiwyg center">
+				<a href="{plink Ceremony:}" class="hp-anchor">
+					<h1 class="center"><img src="{$basePath}/img/hp.jpg" alt="Tereza Ottová &amp; Milan Pála"></h1>
+
+					<p class="big w-max-500">
+						Vám oznamují, že si
+						<span class="hp-date">v sobotu 22.7.2017</span>
+
+						splní svůj sen a svou lásku stvrdí polibkem u kapličky
+						na&nbsp;Štrčkové uprostřed valašských lesů a luk
+					</p>
+					<p>
+						<span class="btn"><span>Buďte u toho s námi</span></span>
+					</p>
+				</a>
+			</div>
 		</div>
+
+
 	</body>
 </html>
+

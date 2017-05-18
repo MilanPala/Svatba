@@ -10,6 +10,10 @@ body {
 
 	@media @w768{
 		.font-size(@font-base-size; 16); background: #f2f2f2 url("/img/bg-body.png") 50% 0;
+
+		&.hp{
+			background:#fff;
+		}
 	}
 }
 
@@ -48,6 +52,11 @@ h4, .h4, h5, h6 {
 .big { .font-size(16; @font-base-size-mobile);
 	@media @w768{
 		.font-size(18);
+	}
+}
+.big-hp { .font-size(18; @font-base-size-mobile);
+	@media @w768{
+		.font-size(24);
 	}
 }
 
