@@ -96,7 +96,7 @@ class Control extends \Nette\Application\UI\Control
 		$this->rsvpLogger->addInfo('Byla přidána nová odpověď', ['data' => $data]);
 		$this->rsvpMail->send($data['name'], $data['partner'], $data['children'], $data['arrive'], $data['starter'], $data['starterPartner'], $data['song'], $data['message']);
 
-		$this->getPresenter()->flashMessage('Moc děkujeme za potvrzení. Těšíme se na viděnou.');
+		$this->getPresenter()->flashMessage('Moc děkujeme za potvrzení. Těšíme se na viděnou.', 'ok');
 		$this->redirect('this');
 	}
 }

@@ -46,7 +46,9 @@
 				<div class="bg-white in-box">
 					<h1 class="center" n:ifset="#title">{include #title}</h1>
 
-					<div n:foreach="$flashes as $flash" n:class="message, $flash->type.'-message'">{$flash->message}</div>
+					<div class="w-max-840">
+						<div n:foreach="$flashes as $flash" n:class="message, $flash->type.'-message'">{$flash->message}</div>
+					</div>
 
 					{include #content}
 
