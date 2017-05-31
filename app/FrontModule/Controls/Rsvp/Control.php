@@ -52,8 +52,6 @@ class Control extends \Nette\Application\UI\Control
 	{
 		$form = new \Nette\Application\UI\Form();
 
-		$form->addProtection('Odešlete prosím informace znovu');
-
 		$form
 			->addText('name', 'Tvé jméno')
 			->setRequired('Potřebovali bychom znát alespoň tvé jméno')
