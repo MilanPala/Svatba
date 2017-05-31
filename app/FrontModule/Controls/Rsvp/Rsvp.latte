@@ -1,23 +1,10 @@
 <form n:name="form" class="form">
-	<p class="col-h-l">
-		<input type="radio" id="radio1" name="radio">
-		<label for="radio1">
-			Přijdu s partnerem
-		</label>
-	</p>
-	<p class="col-h-r">
-		<input type="radio" id="radio2" name="radio">
-		<label for="radio2">
-			Přijdu s dětmi
-		</label>
-	</p>
-	<div class="break"></div>
-
 	<p>
 		<label n:name="name">{$form['name']->getLabel()->getText()}</label>
 		<br/>
 		<input n:name="name" class="inp-text" />
 	</p>
+
 	<p class="col-h-l">
 		<input n:name="partner">
 		<label n:name="partner">
@@ -31,22 +18,69 @@
 		</label>
 	</p>
 	<div class="break"></div>
+	
 	<p class="col-h-l">
-		<input n:name="arriveFriday" class="js-arrive">
-		<label n:name="arriveFriday">
-			{$form['arriveFriday']->getLabelPart()->getText()}
+		<input type="radio" n:name="arrive:App\FrontModule\Controls\Rsvp\Control::ARRIVE_FRIDAY">
+		<label n:name="arrive:App\FrontModule\Controls\Rsvp\Control::ARRIVE_FRIDAY">
+			{$form['arrive']->getLabelPart()->getText()} {$form['arrive']->getLabelPart(App\FrontModule\Controls\Rsvp\Control::ARRIVE_FRIDAY)->getText()}
 		</label>
 	</p>
 	<p class="col-h-r">
-		<input n:name="arriveSaturday" class="js-arrive">
-		<label n:name="arriveSaturday">
-			{$form['arriveSaturday']->getLabelPart()->getText()}
+		<input type="radio" n:name="arrive:App\FrontModule\Controls\Rsvp\Control::ARRIVE_SATURDAY">
+		<label n:name="arrive:App\FrontModule\Controls\Rsvp\Control::ARRIVE_SATURDAY">
+			{$form['arrive']->getLabelPart()->getText()} {$form['arrive']->getLabelPart(App\FrontModule\Controls\Rsvp\Control::ARRIVE_SATURDAY)->getText()}
 		</label>
 	</p>
 	<div class="break"></div>
+
+	<hr>
+
+	<p><label>{$form['starter']->getLabelPart()->getText()}</label></p>
 	<p>
-		<label class="js-hide" n:name="message">{$form['message']->getLabel()->getText()}</label>
-		<textarea cols="50" rows="6" class="inp-text" n:name="message" placeholder="Chtěli byste nám ještě něco vzkázat? Třeba na jakou oblíbenou píseň byste si chtěli na svatbě zatančit?" name="text" id="text"></textarea>
+		<input type="radio" n:name="starter:App\FrontModule\Controls\Rsvp\Control::STARTER_ONE">
+		<label n:name="starter:App\FrontModule\Controls\Rsvp\Control::STARTER_ONE">
+			{$form['starter']->getLabelPart(App\FrontModule\Controls\Rsvp\Control::STARTER_ONE)->getText()}
+		</label>
+	</p>
+
+	<p>
+		<input type="radio" n:name="starter:App\FrontModule\Controls\Rsvp\Control::STARTER_TWO">
+		<label n:name="starter:App\FrontModule\Controls\Rsvp\Control::STARTER_TWO">
+			{$form['starter']->getLabelPart(App\FrontModule\Controls\Rsvp\Control::STARTER_TWO)->getText()}
+		</label>
+	</p>
+
+	<hr>
+
+	<p><label>{$form['starterPartner']->getLabelPart()->getText()}</label></p>
+	<p>
+		<input type="radio" n:name="starterPartner:App\FrontModule\Controls\Rsvp\Control::STARTER_ONE">
+		<label n:name="starterPartner:App\FrontModule\Controls\Rsvp\Control::STARTER_ONE">
+			{$form['starterPartner']->getLabelPart(App\FrontModule\Controls\Rsvp\Control::STARTER_ONE)->getText()}
+		</label>
+	</p>
+
+	<p>
+		<input type="radio" n:name="starterPartner:App\FrontModule\Controls\Rsvp\Control::STARTER_TWO">
+		<label n:name="starterPartner:App\FrontModule\Controls\Rsvp\Control::STARTER_TWO">
+			{$form['starterPartner']->getLabelPart(App\FrontModule\Controls\Rsvp\Control::STARTER_TWO)->getText()}
+		</label>
+	</p>
+
+	<hr>
+
+	<p>
+		<label n:name="message">{$form['song']->getLabel()->getText()} <span style="font-family:'rosalinda'; font-size:1.5em;">❤</span></label>
+	</p>
+	<p>
+		<textarea cols="50" rows="2" class="inp-text" n:name="song"></textarea>
+	</p>
+
+	<p>
+		<label n:name="message">{$form['message']->getLabel()->getText()}</label>
+	</p>
+	<p>
+		<textarea cols="50" rows="6" class="inp-text" n:name="message"></textarea>
 	</p>
 
 	<p class="center">

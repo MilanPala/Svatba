@@ -3,7 +3,9 @@
 Jméno: {$name}
 Přijde s partnerem: {$partner|bool}
 Přijde s dětmi: {$children|bool}
-Přijedeme v pátek: {$arriveFriday|bool}
-Přijedeme až v sobotu: {$arriveSaturday|bool}
+Přijede: {App\FrontModule\Controls\Rsvp\Control::ARRIVES[$arrive]}
+Předkrm: {App\FrontModule\Controls\Rsvp\Control::STARTERS[$starter]}
+Předkrm pro partnera: {App\FrontModule\Controls\Rsvp\Control::STARTERS[$starterPartner]}
+Písnička: {$song}
 
 {if $message}{$message}{/if}

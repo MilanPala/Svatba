@@ -25,14 +25,16 @@ class RsvpMail
 	}
 
 
-	public function send(string $name, bool $partner, bool $children, bool $arriveFriday, bool $arriveSaturday, string $message)
+	public function send(string $name, bool $partner, bool $children, string $arrive, string $starter, string $starterPartner, string $song, string $message)
 	{
 		$parameters = [
 			'name' => $name,
 			'partner' => $partner,
 			'children' => $children,
-			'arriveFriday' => $arriveFriday,
-			'arriveSaturday' => $arriveSaturday,
+			'arrive' => $arrive,
+			'starter' => $starter,
+			'starterPartner' => $starterPartner,
+			'song' => $song,
 			'message' => $message,
 		];
 		$message = $this->messageFactory->create('Potvrzení účasti na svatbě', __DIR__ . '/Rsvp.latte', $parameters);

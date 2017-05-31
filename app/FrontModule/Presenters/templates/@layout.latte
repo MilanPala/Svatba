@@ -50,6 +50,13 @@
 
 					{include #content}
 
+					{if ! $control instanceof App\FrontModule\Presenters\RsvpPresenter}
+						<p><br></p>
+						<div class="center">
+							<img src="{$basePath}/img/web-kyticky.png" width="196" height="84">
+						</div>
+					{/if}
+
 				</div>
 			</div>
 
