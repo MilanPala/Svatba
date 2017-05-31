@@ -22,8 +22,8 @@ class Control extends \Nette\Application\UI\Control
 			'Front:Ceremony' => 'Obřad',
 			'Front:Party' => 'Oslava',
 			'Front:Accommodation' => 'Ubytování',
-			'Front:Rsvp' => 'Počítáme s vámi',
 			'Front:Programme' => 'Program',
+			'Front:Rsvp' => 'Počítáme s vámi',
 		];
 
 		$this->menu = [];
