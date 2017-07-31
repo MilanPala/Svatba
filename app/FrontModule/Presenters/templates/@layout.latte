@@ -92,7 +92,7 @@
 					</p>
 					<ul class="reset points">
 						<li>
-							<a href="{plink Ceremony:}" title="Obřad" n:class="point, point1, $control instanceof App\FrontModule\Presenters\CeremonyPresenter ? active"></a>
+							<a href="{plink Ceremony:}" title="Obřad" n:class="point, point1, $control instanceof App\FrontModule\Presenters\CeremonyPresenter || $control instanceof App\FrontModule\Presenters\SpeechPresenter ? active"></a>
 						</li>
 						<li>
 							<a href="{plink Accommodation:}" title="Ubytování" n:class="point, point2, $control instanceof App\FrontModule\Presenters\AccommodationPresenter ? active"></a>

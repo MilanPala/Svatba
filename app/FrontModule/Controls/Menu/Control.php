@@ -20,10 +20,10 @@ class Control extends \Nette\Application\UI\Control
 
 		$menu = [
 			'Front:Ceremony' => 'Obřad',
+			'Front:Speech' => 'Proslov',
 			'Front:Party' => 'Oslava',
 			'Front:Accommodation' => 'Ubytování',
 			'Front:Programme' => 'Program',
-			'Front:Rsvp' => 'Počítáme s vámi',
 		];
 
 		$this->menu = [];

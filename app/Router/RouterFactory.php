@@ -21,6 +21,7 @@ class RouterFactory
 				Nette\Application\Routers\Route::VALUE => 'Announcement',
 				Nette\Application\Routers\Route::FILTER_TABLE => [
 					'obrad' => 'Ceremony',
+					'proslov' => 'Speech',
 					'oslava' => 'Party',
 					'ubytovani' => 'Accommodation',
 					'pocitame-s-vami' => 'Rsvp',
