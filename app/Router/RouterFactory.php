@@ -10,10 +10,43 @@ class RouterFactory
 
 	use Nette\SmartObject;
 
+	/**
+	 * @var string
+	 */
+	private $photosDir;
 
-	public function createRouter() : Nette\Application\IRouter
+
+	public function __construct(
+		string $photosDir
+	) {
+		$this->photosDir = $photosDir;
+	}
+
+
+	public function createRouter(): Nette\Application\IRouter
 	{
 		$router = new Nette\Application\Routers\RouteList();
+
+		$metadata = [
+			'module' => 'Front',
+			'presenter' => 'Photo',
+			'action' => [
+				Nette\Application\Routers\Route::VALUE => 'large',
+				Nette\Application\Routers\Route::FILTER_TABLE => [
+					'nahledy' => 'small',
+				],
+			],
+			'file' => [
+				Nette\Application\Routers\Route::FILTER_IN => function ($value) {
+					return $value;
+				},
+				Nette\Application\Routers\Route::FILTER_OUT => function (\SplFileInfo $value) {
+					return $value->getFilename();
+				},
+			],
+		];
+		$mask = $this->photosDir . '[/<action [a-z]+>]/<file [a-zA-Z0-9_.]+>';
+		$router[] = new Nette\Application\Routers\Route($mask, $metadata);
 
 		$metadata = [
 			'module' => 'Front',
@@ -26,12 +59,14 @@ class RouterFactory
 					'ubytovani' => 'Accommodation',
 					'pocitame-s-vami' => 'Rsvp',
 					'program' => 'Programme',
+					'fotografie' => 'Media',
 				],
 			],
 			'action' => 'default',
 			'id' => NULL,
 		];
 		$router[] = new Nette\Application\Routers\Route('<presenter>', $metadata);
+
 		$router[] = new Nette\Application\Routers\Route('rsvp', 'Front:Rsvp:default', [Nette\Application\Routers\Route::ONE_WAY]);
 
 		return $router;

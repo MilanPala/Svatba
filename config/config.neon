@@ -2,6 +2,10 @@ extensions:
 	monolog: Kdyby\Monolog\DI\MonologExtension
 
 
+parameters:
+	photosDir: fotky
+
+
 application:
 	catchExceptions: %productionMode%
 	errorPresenter: Front:Error
@@ -11,7 +15,11 @@ application:
 
 
 services:
-	- App\Router\RouterFactory
+	-
+		class: App\Router\RouterFactory
+		arguments:
+			photosDir: %photosDir%
+
 	router: @App\Router\RouterFactory::createRouter
 
 	-
@@ -33,6 +41,11 @@ services:
 		implement: App\FrontModule\Controls\Rsvp\IFactory
 		arguments:
 			- @Kdyby\Monolog\Logger::channel('rsvp')
+
+	-
+		implement: App\FrontModule\Controls\Photos\IFactory
+		arguments:
+			photosDir: %wwwDir%/%photosDir%
 
 
 monolog:
