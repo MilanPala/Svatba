@@ -1,5 +1,7 @@
-<ul>
-{foreach $photos as $photo}
-	<li><a href="{plink :Front:Photo:large $photo}"><img src="{plink :Front:Photo:small $photo}" /></a></li>
-{/foreach}
-</ul>
+<div class="att-images">
+	<ul class="reset">
+		{foreach $photos as $photo}
+			<li><a href="{plink :Front:Photo:large $photo}" class="spc thickbox"><img src="{plink :Front:Photo:small $photo}"/></a></li>
+		{/foreach}
+	</ul>
+</div>
