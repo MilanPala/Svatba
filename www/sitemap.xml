@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<urlset xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+	<url>
+		<loc>https://svatba.palovi.net/</loc>
+		<changefreq>monthly</changefreq>
+		<priority>1</priority>
+		<lastmod>2017-07-22</lastmod>
+		<image:image>
+			<image:loc>https://svatba.palovi.net/img/hp.jpg</image:loc>
+			<image:caption>Svatební oznámení</image:caption>
+		</image:image>
+	</url>
+	<url>
+		<loc>https://svatba.palovi.net/obrad</loc>
+		<changefreq>monthly</changefreq>
+		<priority>1</priority>
+		<lastmod>2017-07-22</lastmod>
+		<image:image>
+			<image:loc>https://svatba.palovi.net/img/illust-ceremony1.jpg</image:loc>
+			<image:caption>Kaplička na Štrčkové</image:caption>
+		</image:image>
+	</url>
+	<url>
+		<loc>https://svatba.palovi.net/proslov</loc>
+		<changefreq>monthly</changefreq>
+		<priority>1</priority>
+		<lastmod>2017-07-31</lastmod>
+	</url>
+	<url>
+		<loc>https://svatba.palovi.net/oslava</loc>
+		<changefreq>monthly</changefreq>
+		<priority>1</priority>
+		<lastmod>2017-07-22</lastmod>
+	</url>
+	<url>
+		<loc>https://svatba.palovi.net/ubytovani</loc>
+		<changefreq>monthly</changefreq>
+		<priority>1</priority>
+		<lastmod>2017-07-22</lastmod>
+		<image:image>
+			<image:loc>https://svatba.palovi.net/img/illust-accomodation.jpg</image:loc>
+			<image:caption>Manželská postel</image:caption>
+		</image:image>		
+	</url>
+	<url>
+		<loc>https://svatba.palovi.net/program</loc>
+		<changefreq>monthly</changefreq>
+		<priority>1</priority>
+		<lastmod>2017-07-22</lastmod>
+	</url>
+</urlset>
