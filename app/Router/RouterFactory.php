@@ -26,6 +26,7 @@ class RouterFactory
 					'ubytovani' => 'Accommodation',
 					'pocitame-s-vami' => 'Rsvp',
 					'program' => 'Programme',
+					'hudba' => 'Music',
 				],
 			],
 			'action' => 'default',
