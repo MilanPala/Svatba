@@ -4,6 +4,8 @@ extensions:
 
 parameters:
 	photosDir: fotky
+	allPhotosFile: # cesta k souboru se všemi fotkami
+	allPhotosFileUrl: # URL se se všemi fotkami ke stažení
 
 
 application:
@@ -19,6 +21,7 @@ services:
 		class: App\Router\RouterFactory
 		arguments:
 			photosDir: %photosDir%
+			allPhotosFileUrl: %allPhotosFileUrl%
 
 	router: @App\Router\RouterFactory::createRouter
 
@@ -46,6 +49,11 @@ services:
 		implement: App\FrontModule\Controls\Photos\IFactory
 		arguments:
 			photosDir: %wwwDir%/%photosDir%
+
+	-
+		class: App\FrontModule\Presenters\DownloadPresenter
+		arguments:
+			file: %allPhotosFile%
 
 
 monolog:
