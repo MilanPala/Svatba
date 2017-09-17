@@ -28,7 +28,8 @@ class Control extends \Nette\Application\UI\Control
 		}
 
 		/** @var \SplFileInfo[] $photosFiles */
-		$photos = \Nette\Utils\Finder::findFiles('*.jpg')->in($this->photosDir);
+		$photos = iterator_to_array(\Nette\Utils\Finder::findFiles('*.jpg')->in($this->photosDir)->getIterator());
+		ksort($photos);
 		$this->getTemplate()->add('photos', $photos);
 
 		$this->template->setFile(__DIR__ . '/Photos.latte');
