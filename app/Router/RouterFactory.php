@@ -41,6 +41,7 @@ class RouterFactory
 				Nette\Application\Routers\Route::VALUE => 'large',
 				Nette\Application\Routers\Route::FILTER_TABLE => [
 					'nahledy' => 'small',
+					'nahledy-2x' => 'smallRetina',
 				],
 			],
 			'file' => [
@@ -52,7 +53,7 @@ class RouterFactory
 				},
 			],
 		];
-		$mask = $this->photosDir . '[/<action [a-z]+>]/<file [a-zA-Z0-9_.]+>';
+		$mask = $this->photosDir . '[/<action [a-z\-0-9]+>]/<file [a-zA-Z0-9_.]+>';
 		$router[] = new Nette\Application\Routers\Route($mask, $metadata);
 
 		$metadata = [
