@@ -23,6 +23,10 @@ class Control extends \Nette\Application\UI\Control
 
 	public function render(): void
 	{
+		if ( ! is_readable($this->photosDir)) {
+			return;
+		}
+
 		/** @var \SplFileInfo[] $photosFiles */
 		$photos = \Nette\Utils\Finder::findFiles('*.jpg')->in($this->photosDir);
 		$this->getTemplate()->add('photos', $photos);

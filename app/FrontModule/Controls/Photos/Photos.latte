@@ -1,4 +1,4 @@
-<div class="att-images">
+<div class="att-images" n:if="count($photos)">
 	<ul class="reset">
 		{foreach $photos as $photo}
 			<li><a href="{plink :Front:Photo:large $photo}" class="spc thickbox"><img src="{plink :Front:Photo:small $photo}"/></a></li>
