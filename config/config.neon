@@ -2,6 +2,12 @@ extensions:
 	monolog: Kdyby\Monolog\DI\MonologExtension
 
 
+parameters:
+	photosDir: fotky
+	allPhotosFile: # cesta k souboru se všemi fotkami
+	allPhotosFileUrl: # URL se se všemi fotkami ke stažení
+
+
 application:
 	catchExceptions: %productionMode%
 	errorPresenter: Front:Error
@@ -11,7 +17,12 @@ application:
 
 
 services:
-	- App\Router\RouterFactory
+	-
+		class: App\Router\RouterFactory
+		arguments:
+			photosDir: %photosDir%
+			allPhotosFileUrl: %allPhotosFileUrl%
+
 	router: @App\Router\RouterFactory::createRouter
 
 	-
@@ -33,6 +44,16 @@ services:
 		implement: App\FrontModule\Controls\Rsvp\IFactory
 		arguments:
 			- @Kdyby\Monolog\Logger::channel('rsvp')
+
+	-
+		implement: App\FrontModule\Controls\Photos\IFactory
+		arguments:
+			photosDir: %wwwDir%/%photosDir%
+
+	-
+		class: App\FrontModule\Presenters\DownloadPresenter
+		arguments:
+			file: %allPhotosFile%
 
 
 monolog:
