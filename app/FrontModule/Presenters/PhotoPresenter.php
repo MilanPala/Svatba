@@ -16,4 +16,10 @@ class PhotoPresenter extends Presenter
 
 	}
 
+
+	public function actionSmallRetina(\SplFileInfo $file): void
+	{
+
+	}
+
 }
