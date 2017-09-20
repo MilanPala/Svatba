@@ -2261,13 +2261,17 @@ th {
   box-sizing: border-box;
   margin-top: 10px;
   padding: 0 5px;
-  text-align: left;
+  text-align: center;
 }
 .att-images .img {
   display: inline-block;
-  width: 100%;
   vertical-align: top;
-  position: relative;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  background: #faf4ed;
 }
 .att-images .img:before {
   position: absolute;
@@ -2277,6 +2281,7 @@ th {
   bottom: 0;
   background: rgba(230, 230, 230, 0.3);
   content: "";
+  z-index: 2;
   opacity: 0;
   -webkit-transition: opacity 0.3s ease;
   -moz-transition: opacity 0.3s ease;
@@ -2291,31 +2296,22 @@ th {
   max-height: 100%;
   width: auto;
   height: auto;
-  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
 }
 .att-images a {
   display: block;
   text-decoration: none;
   color: #010101;
-}
-.att-images .name {
-  background: #fff;
-  min-height: 37px;
-  padding: 6px 0;
-  text-align: center;
-  display: block;
-  font-size: 12px;
-  line-height: 25px;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  -ms-box-sizing: border-box;
-  box-sizing: border-box;
-}
-.att-images .name span {
-  display: inline-block;
-  vertical-align: middle;
-  line-height: normal;
-  margin-top: -4px;
+  width: 100%;
+  padding-bottom: 66.53846154%;
+  height: 0;
+  position: relative;
+  overflow: hidden;
 }
 @media (min-width: 768px) {
   .att-images > ul > li,
@@ -2325,16 +2321,13 @@ th {
 }
 @media (min-width: 960px) {
   .att-images {
-    margin: 0 -5px 1.4em;
-  }
-  .att-images .name {
-    font-size: 82.35294118%;
+    margin: 0 -15px 1.4em;
   }
   .att-images ul {
-    margin-top: -30px;
+    margin-top: -20px;
   }
   .att-images li {
-    margin-top: 30px;
+    margin-top: 20px;
     padding: 0 15px;
   }
 }
