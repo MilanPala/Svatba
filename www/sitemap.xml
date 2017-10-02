@@ -48,4 +48,10 @@
 		<priority>1</priority>
 		<lastmod>2017-07-22</lastmod>
 	</url>
+	<url>
+		<loc>https://svatba.palovi.net/fotografie-video</loc>
+		<changefreq>monthly</changefreq>
+		<priority>1</priority>
+		<lastmod>2017-10-02</lastmod>
+	</url>
 </urlset>
