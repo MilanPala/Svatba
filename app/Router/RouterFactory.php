@@ -55,6 +55,10 @@ class RouterFactory
 		$mask = $this->photosDir . '[/<action [a-z]+>]/<file [a-zA-Z0-9_.]+>';
 		$router[] = new Nette\Application\Routers\Route($mask, $metadata);
 
+		$router[] = new Nette\Application\Routers\Route('rsvp', 'Front:Rsvp:default', [Nette\Application\Routers\Route::ONE_WAY]);
+		$router[] = new Nette\Application\Routers\Route('fotografie', 'Front:Media:default', [Nette\Application\Routers\Route::ONE_WAY]);
+		$router[] = new Nette\Application\Routers\Route('video', 'Front:Media:default', [Nette\Application\Routers\Route::ONE_WAY]);
+
 		$metadata = [
 			'module' => 'Front',
 			'presenter' => [
@@ -66,7 +70,7 @@ class RouterFactory
 					'ubytovani' => 'Accommodation',
 					'pocitame-s-vami' => 'Rsvp',
 					'program' => 'Programme',
-					'fotografie' => 'Media',
+					'fotografie-video' => 'Media',
 					$this->allPhotosFileUrl => 'Download',
 				],
 			],
@@ -74,8 +78,6 @@ class RouterFactory
 			'id' => NULL,
 		];
 		$router[] = new Nette\Application\Routers\Route('<presenter>', $metadata);
-
-		$router[] = new Nette\Application\Routers\Route('rsvp', 'Front:Rsvp:default', [Nette\Application\Routers\Route::ONE_WAY]);
 
 		return $router;
 	}
