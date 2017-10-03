@@ -920,6 +920,25 @@ th {
   display: table-cell;
   padding-right: 10px;
 }
+/* Google Map, YouTube video */
+.video {
+  position: relative;
+  margin: 0 0 1.7em 0;
+  height: 0;
+  padding-top: 56.25%;
+  background: #cfc2b3;
+}
+.video.reset {
+  margin: 0;
+}
+.video iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
 @media (min-width: 590px) {
   .col-h-l,
   .col-h-r {
