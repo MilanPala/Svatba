@@ -10,12 +10,6 @@ function getViewport(){var e;var t;if(typeof window.innerWidth!="undefined"){e=w
 function getTransitionDuration(e,t){var n=$(e);var r="moz webkit ms o khtml".split(" ");var i=0;for(var s=0;s<r.length;s++){var o=n.css("-"+r[s]+"-transition-duration");if(o){o=o.indexOf("ms")>-1?parseFloat(o):parseFloat(o)*1e3;if(t){var u=n.css("-"+r[s]+"-transition-delay");o+=u.indexOf("ms")>-1?parseFloat(u):parseFloat(u)*1e3}i=o;break}}return i};
 
 $(function(){
-	$("a[class*=thickbox]").lightBox({
-		imageBaseDir: '/img/lightbox/cs',
-		langPicture: 'Obrázek',
-		langOf: 'z'
-	});
-
 	/*podle jazyka treba podle class na body */
     //if ( document.location.href.indexOf('/cs') > -1 ) {
 		//$('a[class*=lightbox]').lightBox({
@@ -112,5 +106,8 @@ $(document).ready(function(){
 	// enable transition after all has been done
 	$html.removeClass('disable-transition');
 
+	var slideSelector = 'a';
+	var options = {shareEl: false};
+	$('.att-images ul').photoSwipe(slideSelector, options);
 });
 

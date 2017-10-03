@@ -27,9 +27,14 @@ class Control extends \Nette\Application\UI\Control
 			return;
 		}
 
-		/** @var \SplFileInfo[] $photosFiles */
-		$photos = iterator_to_array(\Nette\Utils\Finder::findFiles('*.jpg')->in($this->photosDir)->getIterator());
-		ksort($photos);
+		/** @var \SplFileInfo[] $splPhotos */
+		$splPhotos = iterator_to_array(\Nette\Utils\Finder::findFiles('*.jpg')->in($this->photosDir)->getIterator());
+		ksort($splPhotos);
+		$photos = [];
+		foreach ($splPhotos as $splPhoto) {
+			$photo = new Photo($splPhoto);
+			$photos[] = $photo;
+		}
 		$this->getTemplate()->add('photos', $photos);
 
 		$this->template->setFile(__DIR__ . '/Photos.latte');

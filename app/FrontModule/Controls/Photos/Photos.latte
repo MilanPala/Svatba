@@ -1,7 +1,7 @@
 <div class="att-images" n:if="count($photos)">
 	<ul class="reset">
 		{foreach $photos as $photo}
-			<li><a href="{plink :Front:Photo:large $photo}" class="spc thickbox" rel="[group 1]"><span class="img"><img src="{plink :Front:Photo:small $photo}"/></span></a></li>
+			<li><a href="{plink :Front:Photo:large $photo->getFile()}"><span class="img"><img src="{plink :Front:Photo:small $photo->getFile()}" data-original-src-width="{$photo->getWidth()}" data-original-src-height="{$photo->getHeight()}" /></span></a></li>
 		{/foreach}
 	</ul>
 </div>
