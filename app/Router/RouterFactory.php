@@ -20,13 +20,20 @@ class RouterFactory
 	 */
 	private $allPhotosFileUrl;
 
+	/**
+	 * @var string
+	 */
+	private $allPhotosFile;
+
 
 	public function __construct(
 		string $photosDir,
-		string $allPhotosFileUrl
+		string $allPhotosFileUrl,
+		string $allPhotosFile
 	) {
 		$this->photosDir = $photosDir;
 		$this->allPhotosFileUrl = $allPhotosFileUrl;
+		$this->allPhotosFile = $allPhotosFile;
 	}
 
 
@@ -71,7 +78,8 @@ class RouterFactory
 					'pocitame-s-vami' => 'Rsvp',
 					'program' => 'Programme',
 					'fotografie-video' => 'Media',
-					$this->allPhotosFileUrl => 'Download',
+					$this->allPhotosFileUrl => 'AllPhotos',
+					$this->allPhotosFile => 'Download',
 				],
 			],
 			'action' => 'default',

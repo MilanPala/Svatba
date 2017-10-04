@@ -22,6 +22,7 @@ services:
 		arguments:
 			photosDir: %photosDir%
 			allPhotosFileUrl: %allPhotosFileUrl%
+			allPhotosFile: %allPhotosFile%
 
 	router: @App\Router\RouterFactory::createRouter
 
@@ -51,7 +52,7 @@ services:
 			photosDir: %wwwDir%/%photosDir%
 
 	-
-		class: App\FrontModule\Presenters\DownloadPresenter
+		class: App\FrontModule\Presenters\AllPhotosPresenter
 		arguments:
 			file: %allPhotosFile%
 
