@@ -85,7 +85,7 @@ class RouterFactory
 			'action' => 'default',
 			'id' => NULL,
 		];
-		$router[] = new Nette\Application\Routers\Route('<presenter>', $metadata);
+		$router[] = new Nette\Application\Routers\Route('<presenter [a-zA-Z0-9.\-]+>', $metadata);
 
 		return $router;
 	}
