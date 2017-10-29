@@ -4,6 +4,7 @@ extensions:
 
 parameters:
 	photosDir: fotky
+	otherPhotosDir: fotky-od-hostu
 	allPhotosFile: # cesta k souboru se všemi fotkami
 	allPhotosFileUrl: # URL se se všemi fotkami ke stažení
 
@@ -20,7 +21,7 @@ services:
 	-
 		class: App\Router\RouterFactory
 		arguments:
-			photosDir: %photosDir%
+			wwwDir: %wwwDir%
 			allPhotosFileUrl: %allPhotosFileUrl%
 			allPhotosFile: %allPhotosFile%
 
@@ -48,8 +49,12 @@ services:
 
 	-
 		implement: App\FrontModule\Controls\Photos\IFactory
+
+	-
+		class: App\FrontModule\Presenters\MediaPresenter
 		arguments:
 			photosDir: %wwwDir%/%photosDir%
+			otherPhotosDir: %wwwDir%/%otherPhotosDir%
 
 	-
 		class: App\FrontModule\Presenters\AllPhotosPresenter

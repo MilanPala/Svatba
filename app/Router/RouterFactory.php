@@ -13,11 +13,6 @@ class RouterFactory
 	/**
 	 * @var string
 	 */
-	private $photosDir;
-
-	/**
-	 * @var string
-	 */
 	private $allPhotosFileUrl;
 
 	/**
@@ -25,15 +20,20 @@ class RouterFactory
 	 */
 	private $allPhotosFile;
 
+	/**
+	 * @var string
+	 */
+	private $wwwDir;
+
 
 	public function __construct(
-		string $photosDir,
+		string $wwwDir,
 		string $allPhotosFileUrl,
 		string $allPhotosFile
 	) {
-		$this->photosDir = $photosDir;
 		$this->allPhotosFileUrl = $allPhotosFileUrl;
 		$this->allPhotosFile = $allPhotosFile;
+		$this->wwwDir = $wwwDir;
 	}
 
 
@@ -58,8 +58,17 @@ class RouterFactory
 					return $value->getFilename();
 				},
 			],
+			NULL => [
+				\Nette\Application\Routers\Route::FILTER_IN => function (array $params) {
+					return $params;
+				},
+				\Nette\Application\Routers\Route::FILTER_OUT => function (array $params) {
+					$params['photoDir'] = substr($params['file']->getPath(), strlen($this->wwwDir) + 1);
+					return $params;
+				},
+			],
 		];
-		$mask = $this->photosDir . '[/<action [a-z]+>]/<file [a-zA-Z0-9_.]+>';
+		$mask = '<photoDir>[/<action [a-z]+>]/<file [a-zA-Z0-9_.]+>';
 		$router[] = new Nette\Application\Routers\Route($mask, $metadata);
 
 		$router[] = new Nette\Application\Routers\Route('rsvp', 'Front:Rsvp:default', [Nette\Application\Routers\Route::ONE_WAY]);

@@ -5,5 +5,6 @@ namespace App\FrontModule\Controls\Photos;
 interface IFactory
 {
 
-	public function create() : Control;
+	public function create(string $photosDir) : Control;
+
 }
