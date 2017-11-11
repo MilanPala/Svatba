@@ -24,7 +24,8 @@ class Control extends \Nette\Application\UI\Control
 			'Front:Party' => 'Oslava',
 			'Front:Accommodation' => 'Ubytování',
 			'Front:Programme' => 'Program',
-			'Front:Media' => 'Fotografie a video',
+			'Front:Media' => 'Fotky a video',
+			'Front:Honeymoon' => 'Líbánky',
 		];
 
 		$this->menu = [];

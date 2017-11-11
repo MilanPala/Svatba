@@ -5,6 +5,7 @@ extensions:
 parameters:
 	photosDir: fotky
 	otherPhotosDir: fotky-od-hostu
+	honeymoonPhotosDir: fotky-z-libanek
 	allPhotosFile: # cesta k souboru se všemi fotkami
 	allPhotosFileUrl: # URL se se všemi fotkami ke stažení
 
@@ -55,6 +56,11 @@ services:
 		arguments:
 			photosDir: %wwwDir%/%photosDir%
 			otherPhotosDir: %wwwDir%/%otherPhotosDir%
+
+	-
+		class: App\FrontModule\Presenters\HoneymoonPresenter
+		arguments:
+			photosDir: %wwwDir%/%honeymoonPhotosDir%
 
 	-
 		class: App\FrontModule\Presenters\AllPhotosPresenter
