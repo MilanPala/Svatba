@@ -29,7 +29,7 @@ class Control extends \Nette\Application\UI\Control
 
 		/** @var \SplFileInfo[] $splPhotos */
 		$splPhotos = iterator_to_array(\Nette\Utils\Finder::findFiles('*.jpg')->in($this->photosDir)->getIterator());
-		ksort($splPhotos);
+		ksort($splPhotos, SORT_NATURAL);
 		$photos = [];
 		foreach ($splPhotos as $splPhoto) {
 			$photo = new Photo($splPhoto);
