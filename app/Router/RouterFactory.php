@@ -87,6 +87,7 @@ class RouterFactory
 					'pocitame-s-vami' => 'Rsvp',
 					'program' => 'Programme',
 					'fotografie-video' => 'Media',
+					'libanky' => 'Honeymoon',
 					$this->allPhotosFileUrl => 'AllPhotos',
 					$this->allPhotosFile => 'Download',
 				],
