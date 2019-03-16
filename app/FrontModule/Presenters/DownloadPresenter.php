@@ -1,8 +1,8 @@
-<?php
+<?php declare(strict_types = 1);
 
 namespace App\FrontModule\Presenters;
 
-class DownloadPresenter extends Presenter
+final class DownloadPresenter extends Presenter
 {
 
 	public function actionDefault(): void

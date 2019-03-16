@@ -1,8 +1,8 @@
-<?php
+<?php declare(strict_types = 1);
 
 namespace App\FrontModule\Controls\Menu;
 
-class Control extends \Nette\Application\UI\Control
+final class Control extends \Nette\Application\UI\Control
 {
 
 	/**
@@ -11,27 +11,25 @@ class Control extends \Nette\Application\UI\Control
 	private $menu;
 
 
-	/**
-	 * @param \Nette\Application\UI\Presenter $presenter
-	 */
-	protected function attached($presenter)
+	public function __construct()
 	{
-		parent::attached($presenter);
+		$cb = function (\Nette\Application\IPresenter $presenter) {
+			$menu = [
+				'Front:Ceremony' => 'Obřad',
+				'Front:Speech' => 'Proslov',
+				'Front:Party' => 'Oslava',
+				'Front:Accommodation' => 'Ubytování',
+				'Front:Programme' => 'Program',
+				'Front:Media' => 'Fotky a video',
+				'Front:Honeymoon' => 'Líbánky',
+			];
 
-		$menu = [
-			'Front:Ceremony' => 'Obřad',
-			'Front:Speech' => 'Proslov',
-			'Front:Party' => 'Oslava',
-			'Front:Accommodation' => 'Ubytování',
-			'Front:Programme' => 'Program',
-			'Front:Media' => 'Fotky a video',
-			'Front:Honeymoon' => 'Líbánky',
-		];
-
-		$this->menu = [];
-		foreach ($menu as $presenterName => $label) {
-			$this->menu[] = new Node($label, $presenterName, $presenterName === $presenter->getName());
-		}
+			$this->menu = [];
+			foreach ($menu as $presenterName => $label) {
+				$this->menu[] = new Node($label, $presenterName, $presenterName === $presenter->getName());
+			}
+		};
+		$this->monitor(\Nette\Application\IPresenter::class, $cb);
 	}
 
 

@@ -1,8 +1,8 @@
-<?php
+<?php declare(strict_types = 1);
 
 namespace App\FrontModule\Controls\Rsvp;
 
-class Control extends \Nette\Application\UI\Control
+final class Control extends \Nette\Application\UI\Control
 {
 
 	const ARRIVE_SATURDAY = 'saturday';
@@ -22,21 +22,14 @@ class Control extends \Nette\Application\UI\Control
 	];
 
 	/**
-	 * @var \Monolog\Logger
-	 */
-	private $rsvpLogger;
-
-	/**
 	 * @var \App\FrontModule\Mails\RsvpMail
 	 */
 	private $rsvpMail;
 
 
 	public function __construct(
-		\Monolog\Logger $rsvpLogger,
 		\App\FrontModule\Mails\RsvpMail $rsvpMail
 	) {
-		$this->rsvpLogger = $rsvpLogger;
 		$this->rsvpMail = $rsvpMail;
 	}
 
@@ -91,7 +84,6 @@ class Control extends \Nette\Application\UI\Control
 
 	private function processForm(\Nette\Application\UI\Form $form, array $data)
 	{
-		$this->rsvpLogger->addInfo('Byla přidána nová odpověď', ['data' => $data]);
 		$this->rsvpMail->send($data['name'], $data['partner'], $data['children'], $data['arrive'], $data['starter'], $data['starterPartner'], $data['song'], $data['message']);
 
 		$this->getPresenter()->flashMessage('Moc děkujeme za potvrzení. Těšíme se na viděnou.', 'ok');

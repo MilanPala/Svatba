@@ -1,7 +1,3 @@
-extensions:
-	monolog: Kdyby\Monolog\DI\MonologExtension
-
-
 parameters:
 	photosDir: fotky
 	otherPhotosDir: fotky-od-hostu
@@ -45,8 +41,6 @@ services:
 
 	-
 		implement: App\FrontModule\Controls\Rsvp\IFactory
-		arguments:
-			- @Kdyby\Monolog\Logger::channel('rsvp')
 
 	-
 		implement: App\FrontModule\Controls\Photos\IFactory
@@ -66,7 +60,3 @@ services:
 		class: App\FrontModule\Presenters\AllPhotosPresenter
 		arguments:
 			file: %allPhotosFile%
-
-
-monolog:
-	name: svatba

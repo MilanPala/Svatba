@@ -11,16 +11,13 @@
 		"ext-xml": "*",
 		"ext-curl": "*",
 		"ext-mysqli": "*",
-		"latte/latte": "~2.4.0",
-		"nette/application": "~2.4.0",
-		"nette/bootstrap": "~2.4.0",
-		"nette/forms": "~2.4.0",
-		"kdyby/monolog": "~1.2.0",
-		"nette/mail": "~2.4.0",
-		"tracy/tracy": "~2.4.0"
-	},
-	"require-dev": {
-		"nextras/mail-panel": "~2.3.0"
+		"latte/latte": "2.5.*",
+		"nette/application": "3.0.*",
+		"nette/bootstrap": "3.0.*",
+		"nette/forms": "3.0.*",
+		"nette/mail": "3.0.*",
+		"nette/finder": "2.5.*",
+		"tracy/tracy": "2.6.*"
 	},
 	"autoload": {
 		"psr-4": {
@@ -29,5 +26,5 @@
 			]
 		}
 	},
-	"minimum-stability": "stable"
+	"minimum-stability": "rc"
 }

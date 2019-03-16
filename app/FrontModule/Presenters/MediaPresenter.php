@@ -1,8 +1,8 @@
-<?php
+<?php declare(strict_types = 1);
 
 namespace App\FrontModule\Presenters;
 
-class MediaPresenter extends Presenter
+final class MediaPresenter extends Presenter
 {
 
 	/**
@@ -25,8 +25,9 @@ class MediaPresenter extends Presenter
 		\App\FrontModule\Controls\Photos\IFactory $factory,
 		string $photosDir,
 		string $otherPhotosDir
-	)
-	{
+	) {
+		parent::__construct();
+
 		$this->photosControlFactory = $factory;
 		$this->photosDir = $photosDir;
 		$this->otherPhotosDir = $otherPhotosDir;

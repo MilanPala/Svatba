@@ -1,8 +1,8 @@
-<?php
+<?php declare(strict_types = 1);
 
 namespace App\FrontModule\Presenters;
 
-class HoneymoonPresenter extends Presenter
+final class HoneymoonPresenter extends Presenter
 {
 
 	/**

@@ -1,8 +1,8 @@
-<?php
+<?php declare(strict_types = 1);
 
 namespace App\Mails;
 
-class MessageFactory
+final class MessageFactory
 {
 
 	/**
@@ -53,7 +53,7 @@ class MessageFactory
 	}
 
 
-	public function create(string $subject, string $templatePath, array $templateParameters)
+	public function create(string $subject, string $templatePath, array $templateParameters): \Nette\Mail\Message
 	{
 		$message = new \Nette\Mail\Message();
 

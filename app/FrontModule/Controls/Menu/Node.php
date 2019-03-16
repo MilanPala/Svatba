@@ -2,7 +2,7 @@
 
 namespace App\FrontModule\Controls\Menu;
 
-class Node
+final class Node
 {
 
 	use \Nette\SmartObject;

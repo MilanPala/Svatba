@@ -1,8 +1,8 @@
-<?php
+<?php declare(strict_types = 1);
 
 namespace App\FrontModule\Presenters;
 
-class PartyPresenter extends Presenter
+final class PartyPresenter extends Presenter
 {
 
 }

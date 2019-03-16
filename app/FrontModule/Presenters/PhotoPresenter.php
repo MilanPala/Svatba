@@ -1,8 +1,8 @@
-<?php
+<?php declare(strict_types = 1);
 
 namespace App\FrontModule\Presenters;
 
-class PhotoPresenter extends Presenter
+final class PhotoPresenter extends Presenter
 {
 
 	public function actionLarge(\SplFileInfo $file): void

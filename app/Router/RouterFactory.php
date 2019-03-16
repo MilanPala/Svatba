@@ -1,14 +1,11 @@
-<?php
+<?php declare(strict_types = 1);
 
 namespace App\Router;
 
-use Nette;
-
-
-class RouterFactory
+final class RouterFactory
 {
 
-	use Nette\SmartObject;
+	use \Nette\SmartObject;
 
 	/**
 	 * @var string
@@ -37,29 +34,29 @@ class RouterFactory
 	}
 
 
-	public function createRouter(): Nette\Application\IRouter
+	public function createRouter(): \Nette\Routing\Router
 	{
-		$router = new Nette\Application\Routers\RouteList();
+		$router = new \Nette\Application\Routers\RouteList();
 
 		$metadata = [
-			'module' => 'Front',
-			'presenter' => 'Photo',
+			'presenter' => 'Front:Photo',
 			'action' => [
-				Nette\Application\Routers\Route::VALUE => 'large',
-				Nette\Application\Routers\Route::FILTER_TABLE => [
+				\Nette\Application\Routers\Route::VALUE => 'large',
+				\Nette\Application\Routers\Route::FILTER_TABLE => [
 					'nahledy' => 'small',
+					'velke' => 'large',
 				],
 			],
 			'file' => [
-				Nette\Application\Routers\Route::FILTER_IN => function ($value) {
+				\Nette\Application\Routers\Route::FILTER_IN => static function ($value) {
 					return $value;
 				},
-				Nette\Application\Routers\Route::FILTER_OUT => function (\SplFileInfo $value) {
+				\Nette\Application\Routers\Route::FILTER_OUT => static function (\SplFileInfo $value) {
 					return $value->getFilename();
 				},
 			],
 			NULL => [
-				\Nette\Application\Routers\Route::FILTER_IN => function (array $params) {
+				\Nette\Application\Routers\Route::FILTER_IN => static function (array $params) {
 					return $params;
 				},
 				\Nette\Application\Routers\Route::FILTER_OUT => function (array $params) {
@@ -68,18 +65,18 @@ class RouterFactory
 				},
 			],
 		];
-		$mask = '<photoDir>[/<action [a-z]+>]/<file [a-zA-Z0-9_.]+>';
-		$router[] = new Nette\Application\Routers\Route($mask, $metadata);
+		$mask = '<photoDir>[/<action>]/<file>';
+		$router[] = new \Nette\Application\Routers\Route($mask, $metadata);
 
-		$router[] = new Nette\Application\Routers\Route('rsvp', 'Front:Rsvp:default', [Nette\Application\Routers\Route::ONE_WAY]);
-		$router[] = new Nette\Application\Routers\Route('fotografie', 'Front:Media:default', [Nette\Application\Routers\Route::ONE_WAY]);
-		$router[] = new Nette\Application\Routers\Route('video', 'Front:Media:default', [Nette\Application\Routers\Route::ONE_WAY]);
+		$router[] = new \Nette\Application\Routers\Route('rsvp', 'Front:Rsvp:default', \Nette\Routing\Router::ONE_WAY);
+		$router[] = new \Nette\Application\Routers\Route('fotografie', 'Front:Media:default', \Nette\Routing\Router::ONE_WAY);
+		$router[] = new \Nette\Application\Routers\Route('video', 'Front:Media:default', \Nette\Routing\Router::ONE_WAY);
 
 		$metadata = [
 			'module' => 'Front',
 			'presenter' => [
-				Nette\Application\Routers\Route::VALUE => 'Announcement',
-				Nette\Application\Routers\Route::FILTER_TABLE => [
+				\Nette\Application\Routers\Route::VALUE => 'Announcement',
+				\Nette\Application\Routers\Route::FILTER_TABLE => [
 					'obrad' => 'Ceremony',
 					'proslov' => 'Speech',
 					'oslava' => 'Party',
@@ -95,7 +92,7 @@ class RouterFactory
 			'action' => 'default',
 			'id' => NULL,
 		];
-		$router[] = new Nette\Application\Routers\Route('<presenter [a-zA-Z0-9.\-]+>', $metadata);
+		$router[] = new \Nette\Application\Routers\Route('<presenter [a-zA-Z0-9.\-]+>', $metadata);
 
 		return $router;
 	}

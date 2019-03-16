@@ -1,11 +1,11 @@
-<?php
+<?php declare(strict_types = 1);
 
 namespace App\FrontModule\Controls\Photos;
 
 /**
  * @method \Nette\Bridges\ApplicationLatte\Template
  */
-class Control extends \Nette\Application\UI\Control
+final class Control extends \Nette\Application\UI\Control
 {
 
 	/**
@@ -32,6 +32,9 @@ class Control extends \Nette\Application\UI\Control
 		ksort($splPhotos, SORT_NATURAL);
 		$photos = [];
 		foreach ($splPhotos as $splPhoto) {
+
+			$this->getPresenter()->link(':Front:Photo:large', [$splPhoto]);
+
 			$photo = new Photo($splPhoto);
 			$photos[] = $photo;
 		}
