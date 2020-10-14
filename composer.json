@@ -6,14 +6,14 @@
 		"MIT"
 	],
 	"require": {
-		"php": "^7.1.0",
-		"latte/latte": "2.5.*",
+		"php": "^7.3.0",
+		"latte/latte": "2.8.2.*",
 		"nette/application": "3.0.*",
 		"nette/bootstrap": "3.0.*",
 		"nette/forms": "3.0.*",
 		"nette/mail": "3.0.*",
 		"nette/finder": "2.5.*",
-		"tracy/tracy": "2.6.*"
+		"tracy/tracy": "2.7.*"
 	},
 	"autoload": {
 		"psr-4": {
@@ -22,5 +22,5 @@
 			]
 		}
 	},
-	"minimum-stability": "rc"
+	"minimum-stability": "stable"
 }
