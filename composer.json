@@ -7,7 +7,7 @@
 	],
 	"require": {
 		"php": "^7.3.0",
-		"latte/latte": "2.8.2.*",
+		"latte/latte": "2.10.6",
 		"nette/application": "3.0.*",
 		"nette/bootstrap": "3.0.*",
 		"nette/forms": "3.0.*",
